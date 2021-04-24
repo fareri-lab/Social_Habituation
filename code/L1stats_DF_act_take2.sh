@@ -18,7 +18,6 @@ maindir=/Users/farerilab/Documents/Habituation_fMRI/deidentified
 # study-specific inputs
 TASK=sonet
 TYPE=act
-sm=6
 #sub=$1
 #run=$2
 #ppi=$3 # 0 for activation, otherwise seed region or network
@@ -61,7 +60,8 @@ for sub in "01" "02" "03"; do
 
 		DATA=${maindir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 		CONFOUNDEVS=${maindir}/derivatives/fsl/confounds/sub-${sub}
-
+		sm=6
+		
 		if [ ! -e $CONFOUNDEVS ]; then
 			echo "missing: $CONFOUNDEVS " >> ${maindir}/re-runL1.log
 			exit # exiting to ensure nothing gets run without confounds
