@@ -55,7 +55,7 @@ else
 	EV_SHAPE=10
 fi
 
-for sub in "01" "02" "03"; do
+for sub in "01"; do
 	for run in "1" "2" "3" "4"; do
 
 		DATA=${maindir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
