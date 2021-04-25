@@ -33,7 +33,7 @@ set fmri(sscleanup_yn) 0
 set fmri(outputdir) "OUTPUT"
 
 # TR(s)
-set fmri(tr) 3.0
+set fmri(tr) 2.0
 
 # Total volumes
 set fmri(npts) 0
@@ -153,8 +153,8 @@ set fmri(mixed_yn) 2
 set fmri(randomisePermutations) 5000
 
 # Number of EVs
-set fmri(evs_orig) 12
-set fmri(evs_real) 24
+set fmri(evs_orig) 11
+set fmri(evs_real) 22
 set fmri(evs_vox) 0
 
 # Number of contrasts
@@ -278,7 +278,7 @@ set fmri(confoundevs) 1
 set confoundev_files(1) "CONFOUNDS"
 
 # EV 1 title
-set fmri(evtitle1) "INPUT01"
+set fmri(evtitle1) "C_Ques"
 
 # Basic waveform shape (EV 1)
 # 0 : Square
@@ -307,7 +307,7 @@ set fmri(convolve_phase1) 0
 set fmri(tempfilt_yn1) 1
 
 # Add temporal derivative (EV 1)
-set fmri(deriv_yn1) 1
+set fmri(deriv_yn1) 0
 
 # Custom EV file (EV 1)
 set fmri(custom1) "INPUT01"
@@ -352,7 +352,7 @@ set fmri(ortho1.11) 0
 set fmri(ortho1.12) 0
 
 # EV 2 title
-set fmri(evtitle2) "INPUT02"
+set fmri(evtitle2) "StrQ"
 
 # Basic waveform shape (EV 2)
 # 0 : Square
@@ -381,7 +381,7 @@ set fmri(convolve_phase2) 0
 set fmri(tempfilt_yn2) 1
 
 # Add temporal derivative (EV 2)
-set fmri(deriv_yn2) 1
+set fmri(deriv_yn2) 0
 
 # Custom EV file (EV 2)
 set fmri(custom2) "INPUT02"
@@ -426,7 +426,7 @@ set fmri(ortho2.11) 0
 set fmri(ortho2.12) 0
 
 # EV 3 title
-set fmri(evtitle3) "INPUT03"
+set fmri(evtitle3) "FriendQ"
 
 # Basic waveform shape (EV 3)
 # 0 : Square
@@ -455,7 +455,7 @@ set fmri(convolve_phase3) 0
 set fmri(tempfilt_yn3) 1
 
 # Add temporal derivative (EV 3)
-set fmri(deriv_yn3) 1
+set fmri(deriv_yn3) 0
 
 # Custom EV file (EV 3)
 set fmri(custom3) "INPUT03"
@@ -500,7 +500,7 @@ set fmri(ortho3.11) 0
 set fmri(ortho3.12) 0
 
 # EV 4 title
-set fmri(evtitle4) "INPUT04"
+set fmri(evtitle4) "CompPun"
 
 # Basic waveform shape (EV 4)
 # 0 : Square
@@ -529,7 +529,7 @@ set fmri(convolve_phase4) 0
 set fmri(tempfilt_yn4) 1
 
 # Add temporal derivative (EV 4)
-set fmri(deriv_yn4) 1
+set fmri(deriv_yn4) 0
 
 # Custom EV file (EV 4)
 set fmri(custom4) "INPUT04"
@@ -574,7 +574,7 @@ set fmri(ortho4.11) 0
 set fmri(ortho4.12) 0
 
 # EV 5 title
-set fmri(evtitle5) "INPUT05"
+set fmri(evtitle5) "StrPun"
 
 # Basic waveform shape (EV 5)
 # 0 : Square
@@ -603,7 +603,7 @@ set fmri(convolve_phase5) 0
 set fmri(tempfilt_yn5) 1
 
 # Add temporal derivative (EV 5)
-set fmri(deriv_yn5) 1
+set fmri(deriv_yn5) 0
 
 # Custom EV file (EV 5)
 set fmri(custom5) "INPUT05"
@@ -648,7 +648,7 @@ set fmri(ortho5.11) 0
 set fmri(ortho5.12) 0
 
 # EV 6 title
-set fmri(evtitle6) "INPUT06"
+set fmri(evtitle6) "FriendPun"
 
 # Basic waveform shape (EV 6)
 # 0 : Square
@@ -677,7 +677,7 @@ set fmri(convolve_phase6) 0
 set fmri(tempfilt_yn6) 1
 
 # Add temporal derivative (EV 6)
-set fmri(deriv_yn6) 1
+set fmri(deriv_yn6) 0
 
 # Custom EV file (EV 6)
 set fmri(custom6) "INPUT06"
@@ -722,7 +722,7 @@ set fmri(ortho6.11) 0
 set fmri(ortho6.12) 0
 
 # EV 7 title
-set fmri(evtitle7) "INPUT07"
+set fmri(evtitle7) "CompRew"
 
 # Basic waveform shape (EV 7)
 # 0 : Square
@@ -751,7 +751,7 @@ set fmri(convolve_phase7) 0
 set fmri(tempfilt_yn7) 1
 
 # Add temporal derivative (EV 7)
-set fmri(deriv_yn7) 1
+set fmri(deriv_yn7) 0
 
 # Custom EV file (EV 7)
 set fmri(custom7) "INPUT07"
@@ -802,7 +802,7 @@ set fmri(ortho7.11) 0
 set fmri(ortho7.12) 0
 
 # EV 8 title
-set fmri(evtitle8) "INPUT08"
+set fmri(evtitle8) "StrRew"
 
 # Basic waveform shape (EV 8)
 # 0 : Square
@@ -831,7 +831,7 @@ set fmri(convolve_phase8) 0
 set fmri(tempfilt_yn8) 1
 
 # Add temporal derivative (EV 8)
-set fmri(deriv_yn8) 1
+set fmri(deriv_yn8) 0
 
 # Custom EV file (EV 8)
 set fmri(custom8) "INPUT08"
@@ -876,7 +876,7 @@ set fmri(ortho8.11) 0
 set fmri(ortho8.12) 0
 
 # EV 9 title
-set fmri(evtitle9) "INPUT09"
+set fmri(evtitle9) "FriendRew"
 
 # Basic waveform shape (EV 9)
 # 0 : Square
@@ -905,7 +905,7 @@ set fmri(convolve_phase9) 0
 set fmri(tempfilt_yn9) 1
 
 # Add temporal derivative (EV 9)
-set fmri(deriv_yn9) 1
+set fmri(deriv_yn9) 0
 
 # Custom EV file (EV 9)
 set fmri(custom9) "INPUT09"
@@ -950,7 +950,7 @@ set fmri(ortho9.11) 0
 set fmri(ortho9.12) 0
 
 # EV 10 title
-set fmri(evtitle10) "INPUT10"
+set fmri(evtitle10) "Miss_Ques"
 
 # Basic waveform shape (EV 10)
 # 0 : Square
@@ -970,7 +970,7 @@ set fmri(shape10) 3
 # 5 : Sine basis functions
 # 6 : FIR basis functions
 # 8 : Alternate Double-Gamma
-set fmri(convolve10) 3
+set fmri(convolve10) 0
 
 # Convolve phase (EV 10)
 set fmri(convolve_phase10) 0
@@ -979,7 +979,7 @@ set fmri(convolve_phase10) 0
 set fmri(tempfilt_yn10) 1
 
 # Add temporal derivative (EV 10)
-set fmri(deriv_yn10) 1
+set fmri(deriv_yn10) 0
 
 # Custom EV file (EV 10)
 set fmri(custom10) "INPUT10"
@@ -1024,7 +1024,7 @@ set fmri(ortho10.11) 0
 set fmri(ortho10.12) 0
 
 # EV 11 title
-set fmri(evtitle11) "INPUT11"
+set fmri(evtitle11) "Miss_FB"
 
 # Basic waveform shape (EV 11)
 # 0 : Square
@@ -1044,7 +1044,7 @@ set fmri(shape11) 3
 # 5 : Sine basis functions
 # 6 : FIR basis functions
 # 8 : Alternate Double-Gamma
-set fmri(convolve11) 3
+set fmri(convolve11) 0
 
 # Convolve phase (EV 11)
 set fmri(convolve_phase11) 0
@@ -1053,7 +1053,7 @@ set fmri(convolve_phase11) 0
 set fmri(tempfilt_yn11) 1
 
 # Add temporal derivative (EV 11)
-set fmri(deriv_yn11) 1
+set fmri(deriv_yn11) 0
 
 # Custom EV file (EV 11)
 set fmri(custom11) "INPUT11"
@@ -1096,80 +1096,6 @@ set fmri(ortho11.11) 0
 
 # Orthogonalise EV 11 wrt EV 12
 set fmri(ortho11.12) 0
-
-# EV 12 title
-set fmri(evtitle12) "INPUT12"
-
-# Basic waveform shape (EV 12)
-# 0 : Square
-# 1 : Sinusoid
-# 2 : Custom (1 entry per volume)
-# 3 : Custom (3 column format)
-# 4 : Interaction
-# 10 : Empty (all zeros)
-set fmri(shape12) 3
-
-# Convolution (EV 12)
-# 0 : None
-# 1 : Gaussian
-# 2 : Gamma
-# 3 : Double-Gamma HRF
-# 4 : Gamma basis functions
-# 5 : Sine basis functions
-# 6 : FIR basis functions
-# 8 : Alternate Double-Gamma
-set fmri(convolve12) 3
-
-# Convolve phase (EV 12)
-set fmri(convolve_phase12) 0
-
-# Apply temporal filtering (EV 12)
-set fmri(tempfilt_yn12) 1
-
-# Add temporal derivative (EV 12)
-set fmri(deriv_yn12) 1
-
-# Custom EV file (EV 12)
-set fmri(custom12) ""
-
-# Orthogonalise EV 12 wrt EV 0
-set fmri(ortho12.0) 0
-
-# Orthogonalise EV 12 wrt EV 1
-set fmri(ortho12.1) 0
-
-# Orthogonalise EV 12 wrt EV 2
-set fmri(ortho12.2) 0
-
-# Orthogonalise EV 12 wrt EV 3
-set fmri(ortho12.3) 0
-
-# Orthogonalise EV 12 wrt EV 4
-set fmri(ortho12.4) 0
-
-# Orthogonalise EV 12 wrt EV 5
-set fmri(ortho12.5) 0
-
-# Orthogonalise EV 12 wrt EV 6
-set fmri(ortho12.6) 0
-
-# Orthogonalise EV 12 wrt EV 7
-set fmri(ortho12.7) 0
-
-# Orthogonalise EV 12 wrt EV 8
-set fmri(ortho12.8) 0
-
-# Orthogonalise EV 12 wrt EV 9
-set fmri(ortho12.9) 0
-
-# Orthogonalise EV 12 wrt EV 10
-set fmri(ortho12.10) 0
-
-# Orthogonalise EV 12 wrt EV 11
-set fmri(ortho12.11) 0
-
-# Orthogonalise EV 12 wrt EV 12
-set fmri(ortho12.12) 0
 
 # Contrast & F-tests mode
 # real : control real EVs
