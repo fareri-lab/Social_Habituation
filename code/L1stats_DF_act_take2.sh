@@ -53,17 +53,17 @@ TYPE=act
 #	EV_SHAPE=10
 #fi
 
-for sub in "08" "09" "10" "11"; do
+for sub in "01" "02" "03" "04" "05" "07" "08" "09" "10" "11"; do
 	for run in "1" "2" "3" "4"; do
 
-		DATA=${maindir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_res-2_desc-preproc_bold.nii.gz
+		DATA=${maindir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 		CONFOUNDEVS=${maindir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
 		sm=6
 		MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
 		mkdir -p $MAINOUTPUT
 		EVDIR=${maindir}/derivatives/fsl/EVfiles/sub-${sub}/run-0${run}
 
-
+		echo "variables declared"
 		if [ ! -e $CONFOUNDEVS ]; then
 			echo "missing: $CONFOUNDEVS " >> ${maindir}/re-runL1.log
 			exit # exiting to ensure nothing gets run without confounds
@@ -71,15 +71,18 @@ for sub in "08" "09" "10" "11"; do
 
 	# set output based in whether it is activation or ppi
 		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-01_type-${TYPE}_run-0${run}_sm-${sm}
+		echo ${OUTPUT}
 
+		rm -rf ${OUTPUT}.feat
 # check for output and skip existing
-		if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-			exit
-		else
-			echo "missing: $OUTPUT " >> ${maindir}/re-runL1.log
-			rm -rf ${OUTPUT}.feat
-		fi
+		#if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
+		#	exit
+		#else
+		#	echo "missing: $OUTPUT " >> ${maindir}/re-runL1.log
+		#	rm -rf ${OUTPUT}.feat
+		#fi
 
+		echo "got here"
 	# create template and run analyses
 		INPUT01=${EVDIR}/C_Ques_${run}.txt
 		INPUT02=${EVDIR}/H_Ques_${run}.txt
@@ -93,8 +96,8 @@ for sub in "08" "09" "10" "11"; do
 		INPUT10=${EVDIR}/Miss_Ques_${run}.txt
 		INPUT11=${EVDIR}/Miss_FB_${run}.txt
 
-		ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-01.fsf
-		OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-01_run-0${run}.fsf
+		ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-01_new.fsf
+		OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-01_run-0${run}_new.fsf
 				sed -e 's@OUTPUT@'$OUTPUT'@g' \
 				-e 's@DATA@'$DATA'@g' \
 				-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \

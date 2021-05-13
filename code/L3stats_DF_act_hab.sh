@@ -12,7 +12,7 @@ TYPE=act
 for COPENUM in `seq 10 20`; do
   echo ${COPENUM}
   MAINOUTPUT=${maindir}/derivatives/fsl/
-  OUTPUT=${MAINOUTPUT}/L3_model01_hab_n10_neg_cope${COPENUM}
+  OUTPUT=${MAINOUTPUT}/L3_model01_hab_n10_cope${COPENUM}_z23
 
   echo ${OUTPUT}
 
