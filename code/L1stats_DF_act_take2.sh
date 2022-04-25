@@ -13,6 +13,9 @@
 #scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 #maindir="$(dirname "$scriptdir")"
 
+####updated 12/20/2021 for FIR analyses
+####confoundEV file name updated (_new), contains spike regressors from fmriprep
+
 maindir=/Users/farerilab/Documents/Habituation_fMRI/deidentified
 #mkdir ${maindir}/templates
 # study-specific inputs
@@ -53,13 +56,13 @@ TYPE=act
 #	EV_SHAPE=10
 #fi
 
-for sub in "01" "02" "03" "04" "05" "07" "08" "09" "10" "11"; do
-	for run in "1" "2" "3" "4"; do
-
+for sub in "17"; do
+	#for run in "1" "2" "3" "4"; do
+	for run in "1" "2"; do
 		DATA=${maindir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
-		CONFOUNDEVS=${maindir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
+		CONFOUNDEVS=${maindir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds_new.tsv
 		sm=6
-		MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
+		MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}_FIR
 		mkdir -p $MAINOUTPUT
 		EVDIR=${maindir}/derivatives/fsl/EVfiles/sub-${sub}/run-0${run}
 
@@ -69,8 +72,8 @@ for sub in "01" "02" "03" "04" "05" "07" "08" "09" "10" "11"; do
 			exit # exiting to ensure nothing gets run without confounds
 		fi
 
-	# set output based in whether it is activation or ppi
-		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-01_type-${TYPE}_run-0${run}_sm-${sm}
+	# set output based on whether it is activation or ppi
+		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-01_type-${TYPE}_run-0${run}_sm-${sm}_FIR_5bins
 		echo ${OUTPUT}
 
 		rm -rf ${OUTPUT}.feat
@@ -83,6 +86,7 @@ for sub in "01" "02" "03" "04" "05" "07" "08" "09" "10" "11"; do
 		#fi
 
 		echo "got here"
+		
 	# create template and run analyses
 		INPUT01=${EVDIR}/C_Ques_${run}.txt
 		INPUT02=${EVDIR}/H_Ques_${run}.txt
@@ -96,8 +100,8 @@ for sub in "01" "02" "03" "04" "05" "07" "08" "09" "10" "11"; do
 		INPUT10=${EVDIR}/Miss_Ques_${run}.txt
 		INPUT11=${EVDIR}/Miss_FB_${run}.txt
 
-		ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-01_new.fsf
-		OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-01_run-0${run}_new.fsf
+		ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-01_new_FIR_5bins_generictemplate_FTests.fsf
+		OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-01_run-0${run}_new_FIR_5bins.fsf
 				sed -e 's@OUTPUT@'$OUTPUT'@g' \
 				-e 's@DATA@'$DATA'@g' \
 				-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
